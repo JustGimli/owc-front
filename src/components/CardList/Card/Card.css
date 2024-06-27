@@ -1,39 +1,38 @@
 .card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    margin: 10px;
-    max-width: 300px;
-    text-align: center;
-    transition: box-shadow 0.3s ease;
-  }
-  
-  .card:hover {
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-  
-  .card-image {
-    width: 100%;
-    height: auto;
-  }
-  
-  .card-content {
-    padding: 15px;
-  }
-  
-  .price {
-    color: #E53935;
-    font-size: 18px;
-  }
-  
-  .original-price {
-    text-decoration: line-through;
-    color: #999;
-    font-size: 14px;
-  }
-  
-  .reviews {
-    color: #777;
-    font-size: 14px;
-  }
-  
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 10px;
+  max-width: 300px;
+  text-align: center;
+  transition: box-shadow 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.card-image {
+  width: 100%;
+  height: auto;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.price {
+  color: #E53935;
+  font-size: 18px;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 14px;
+}
+
+.reviews {
+  color: #777;
+  font-size: 14px;
+}

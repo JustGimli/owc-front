@@ -13,7 +13,7 @@ interface CardListProps {
       <div className="card-list">
         {cards.map((card, index) => (
           <Card
-            key={index}
+            key={card.id}
             title={card.title}
             price={card.price}
             originalPrice={card.originalPrice}
