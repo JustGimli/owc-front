@@ -1,28 +1,33 @@
 import React from 'react';
 import './CardList.css';
-import { CardInterface } from '../../utils/interfaces';
-import Card from './Card/CardItem';
 
+import CardItem from './Card/CardItem';
+import { Product } from '../../utils/interfaces';
 
 interface CardListProps {
-    cards: CardInterface[];
-  }
-  
-  const CardList: React.FC<CardListProps> = ({ cards }) => {
-    return (
-      <div className="card-list">
-        {cards.map((card, index) => (
-          <Card
-            key={card.id}
-            title={card.title}
-            price={card.price}
-            originalPrice={card.originalPrice}
-            reviews={card.reviews}
-            imageUrl={card.imageUrl}
-          />
-        ))}
-      </div>
-    );
-  };
-  
-  export default CardList;
+  cards: Product[];
+}
+
+const CardList: React.FC<CardListProps> = ({ cards }) => {
+  return (
+    <div className="card-list">
+      {cards.map(card => (
+        <CardItem
+          key={card.id}
+          id={card.id}
+          title={card.title}
+          price={card.price}
+          originalPrice={card.originalPrice}
+          reviews={card.reviews}
+          condition={card.condition}
+          imageUrl={card.imageUrl}
+          deliveryDate={card.deliveryDate}
+          orderWithin={card.orderWithin}
+          description={card.description}
+        />
+      ))}
+    </div>
+  );
+};
+
+export default CardList;
