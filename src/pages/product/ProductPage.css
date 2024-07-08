@@ -1,60 +1,79 @@
 .product-page {
-    display: flex;
-    padding: 20px;
-    justify-content: center;
-  }
-  
-  .product-images {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .main-image {
-    width: 300px;
-    height: auto;
-  }
-  
-  .thumbnail-images {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-  }
-  
-  .thumbnail-images img {
-    width: 50px;
-    height: auto;
-    cursor: pointer;
-  }
-  
-  .product-details {
-    flex: 1;
-    margin-left: 20px;
-  }
-  
-  .price {
-    display: flex;
-    align-items: baseline;
-  }
-  
-  .current-price {
-    color: #E53935;
-    font-size: 24px;
-    margin-right: 10px;
-  }
-  
-  .original-price {
-    text-decoration: line-through;
-    color: #999;
-    font-size: 18px;
-  }
-  
-  .warranty {
-    margin-top: 20px;
-  }
-  
-  .description {
-    margin-top: 20px;
-  }
-  
+  display: flex;
+  padding: 20px;
+}
+
+.product-images {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-image {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+.thumbnail-images {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.thumbnail.selected {
+  border-color: #ff9900;
+}
+
+.product-details {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.product-details h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.price {
+  display: flex;
+  align-items: baseline;
+}
+
+.current-price {
+  font-size: 24px;
+  color: #ff9900;
+  margin-right: 10px;
+}
+
+.original-price {
+  font-size: 18px;
+  color: #aaa;
+  text-decoration: line-through;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #ff9900;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #cc7a00;
+}
+
+.warranty, .description {
+  margin-top: 20px;
+}

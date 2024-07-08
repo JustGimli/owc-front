@@ -5,7 +5,7 @@ export interface Product {
   originalPrice?: number;
   reviews: number;
   condition: string;
-  imageUrl: string;
+  imageUrls: string[];
   deliveryDate: string;
   orderWithin: string;
   description: string;

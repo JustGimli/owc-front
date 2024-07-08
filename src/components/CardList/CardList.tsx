@@ -20,7 +20,7 @@ const CardList: React.FC<CardListProps> = ({ cards }) => {
           originalPrice={card.originalPrice}
           reviews={card.reviews}
           condition={card.condition}
-          imageUrl={card.imageUrl}
+          imageUrls={card.imageUrls}
           deliveryDate={card.deliveryDate}
           orderWithin={card.orderWithin}
           description={card.description}
