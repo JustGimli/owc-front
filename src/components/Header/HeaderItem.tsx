@@ -1,59 +1,51 @@
-import "./Header-module.css";
-import { useState } from "react";
-import MenuIcon from "@mui/icons-material/Menu";
-import Drawer from "@mui/material/Drawer";
-import Box from "@mui/material/Box";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { observer } from 'mobx-react-lite';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import SearchIcon from '@mui/icons-material/Search';
 
-export const Header = ({ isMobile, isTablet }: any) => {
-  const [show, setShow] = useState(false);
+import './Header.css';
+import cartStore from '../../store/CartStore';
+import { COLLECTION_PATH } from '../../utils/consts';
+import ProfileMenu from '../ProfileMenu/ProfileMenu';
+
+const Header: React.FC = observer(() => {
+  const [profileMenuOpen, setProfileMenuOpen] = useState(false);
 
   return (
-    <header className="header" style={isMobile || isTablet ? { justifyContent: "right" } : {}}>
-      <div className="logo">Logo</div>
-      {isMobile || isTablet ? (
-        <>
-          <button onClick={() => setShow(true)}>
-            <MenuIcon color="primary" sx={{ fontSize: 60 }} />
-          </button>
-          <Drawer anchor={"right"} open={show} onClose={() => setShow(false)}>
-            <Box
-              sx={{ width: 250 }}
-              role="presentation"
-              onClick={() => setShow(false)}
-              onKeyDown={() => setShow(false)}
-            >
-              <ul className="nav" style={{ flexDirection: "column", alignItems: "start" }}>
-                {HeaderBar.map((el) => (
-                  <li key={el.path}>
-                    <Link to={el.path} style={{ fontSize: 22 }}>
-                      {el.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </Box>
-          </Drawer>
-        </>
-      ) : (
-        <ul className="nav">
-          {HeaderBar.map((el) => (
-            <li key={el.path}>
-              <Link to={el.path}>{el.label}</Link>
-            </li>
-          ))}
-        </ul>
-      )}
-      <Link to="/cart" className="cart-link">Cart</Link>
+    <header className="bg-green-800 p-4">
+      <div className="container mx-auto flex justify-between items-center">
+        <Link to={COLLECTION_PATH} className="text-white text-2xl font-bold">
+          <img src={require('../../static/plug_logo.avif')} alt="Plug Logo" className="h-10" />
+        </Link>
+        <nav className="hidden md:flex space-x-4">
+        
+          <Link to={COLLECTION_PATH} className="text-white hover:text-gray-300">Apple</Link>
+          {/* <Link to={PAYMENT} className="text-white hover:text-gray-300">Lottery</Link> */}
+         
+          <Link to="/about" className="text-white hover:text-gray-300">About</Link>
+        </nav>
+        <div className="flex space-x-4 items-center">
+          <Link to="/search" className="text-white hover:text-gray-300">
+            <SearchIcon />
+          </Link>
+          <div className="relative">
+            <button onClick={() => setProfileMenuOpen(!profileMenuOpen)} className="text-white relative hover:text-gray-300">
+              <AccountCircleIcon />
+            </button>
+            {profileMenuOpen && <ProfileMenu />}
+          </div>
+          <Link to="/cart" className="text-white relative hover:text-gray-300">
+            <ShoppingCartIcon />
+            <span className="absolute -top-2 -right-2 bg-orange-500 text-white rounded-full px-2 text-xs">
+              {cartStore.count}
+            </span>
+          </Link>
+        </div>
+      </div>
     </header>
   );
-};
+});
 
-const HeaderBar = [
-  { label: "Home", path: "/" },
-  { label: "About", path: "/about" },
-  { label: "FAQ", path: "/faq" },
-  { label: "How to Use", path: "/how-to-use" },
-  { label: "Advantages", path: "/advantages" },
-  { label: "Feedback", path: "/feedback" },
-];
+export default Header;

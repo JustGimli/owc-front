@@ -1,0 +1,16 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.nav a {
+  transition: color 0.3s;
+}
+
+.icons a {
+  transition: color 0.3s;
+}

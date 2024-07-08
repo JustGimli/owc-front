@@ -12,7 +12,7 @@ const CardItem: React.FC<Product> = ({ id, title, price, originalPrice, reviews,
       </Link>
       <div className="card-content">
         <h3>{title}</h3>
-        <p className="price">From ${price} <span className="original-price">${originalPrice}</span></p>
+        <p className="price">From ${price}  <span className="original-price" >${originalPrice}</span></p>
         <p className="reviews">{reviews} reviews</p>
         <Link to={`/product/${id}`}>
           <button>View Product</button>

@@ -6,7 +6,7 @@ import './Cart.css';
 import { Product } from '../../utils/interfaces';
 import cartStore from '../../store/CartStore';
 
-const Cart: React.FC = observer(() => {
+const CartPage: React.FC = observer(() => {
   return (
     <div className="cart">
       <h2>Your Cart</h2>
@@ -33,4 +33,4 @@ const Cart: React.FC = observer(() => {
   );
 });
 
-export default Cart;
+export default CartPage;
