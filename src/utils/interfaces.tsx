@@ -4,10 +4,8 @@ export interface Product {
   price: number;
   originalPrice?: number;
   reviews: number;
-  condition: string;
   imageUrls: string[];
-  deliveryDate: string;
-  orderWithin: string;
+  condition: string;
   description: string;
 }
 

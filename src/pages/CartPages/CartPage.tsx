@@ -13,7 +13,7 @@ const CartPage: React.FC = observer(() => {
       <ul>
         {cartStore.cart.map((product: Product, index: number) => (
           <li key={index} className="cart-item">
-            {/* <img src={product.imageUrl} alt={product.title} className="cart-image" /> */}
+            <img src={product.imageUrls[0]} alt={product.title} className="cart-image" />
             <div className="cart-details">
               <h3>{product.title}</h3>
               <p>${product.price}</p>
