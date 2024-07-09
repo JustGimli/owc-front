@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { observer } from 'mobx-react-lite';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import SearchIcon from '@mui/icons-material/Search';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { observer } from "mobx-react-lite";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import SearchIcon from "@mui/icons-material/Search";
 
-import './Header.css';
-import cartStore from '../../store/CartStore';
-import { COLLECTION_PATH } from '../../utils/consts';
-import ProfileMenu from '../ProfileMenu/ProfileMenu';
+import "./Header.css";
+import cartStore from "../../store/CartStore";
+import { COLLECTION_PATH, LOTTERY_PATH } from "../../utils/consts";
+import ProfileMenu from "../ProfileMenu/ProfileMenu";
 
 const Header: React.FC = observer(() => {
   const [profileMenuOpen, setProfileMenuOpen] = useState(false);
@@ -17,21 +17,33 @@ const Header: React.FC = observer(() => {
     <header className="bg-green-800 p-4">
       <div className="container mx-auto flex justify-between items-center">
         <Link to={COLLECTION_PATH} className="text-white text-2xl font-bold">
-          <img src={require('../../static/plug_logo.avif')} alt="Plug Logo" className="h-10" />
+          <img
+            src={require("../../static/plug_logo.avif")}
+            alt="Plug Logo"
+            className="h-10"
+          />
         </Link>
         <nav className="hidden md:flex space-x-4">
-        
-          <Link to={COLLECTION_PATH} className="text-white hover:text-gray-300">Apple</Link>
-          {/* <Link to={PAYMENT} className="text-white hover:text-gray-300">Lottery</Link> */}
-         
-          <Link to="/about" className="text-white hover:text-gray-300">About</Link>
+          <Link to={COLLECTION_PATH} className="text-white hover:text-gray-300">
+            Apple
+          </Link>
+          <Link to={LOTTERY_PATH} className="text-white hover:text-gray-300">
+            Lottery
+          </Link>
+
+          <Link to="/about" className="text-white hover:text-gray-300">
+            About
+          </Link>
         </nav>
         <div className="flex space-x-4 items-center">
           <Link to="/search" className="text-white hover:text-gray-300">
             <SearchIcon />
           </Link>
           <div className="relative">
-            <button onClick={() => setProfileMenuOpen(!profileMenuOpen)} className="text-white relative hover:text-gray-300">
+            <button
+              onClick={() => setProfileMenuOpen(!profileMenuOpen)}
+              className="text-white relative hover:text-gray-300"
+            >
               <AccountCircleIcon />
             </button>
             {profileMenuOpen && <ProfileMenu />}

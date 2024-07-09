@@ -74,6 +74,7 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
           backgroundColor: '#FBBF24',
           color: '#FFFFFF',
           mb: 4,
+          width: "100%",
           '&:hover': {
             backgroundColor: '#F6AD10',
           }
