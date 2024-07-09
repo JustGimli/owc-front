@@ -7,7 +7,7 @@ import SearchIcon from "@mui/icons-material/Search";
 
 import "./Header.css";
 import cartStore from "../../store/CartStore";
-import { COLLECTION_PATH, LOTTERY_PATH } from "../../utils/consts";
+import { ABOUT_PATH, COLLECTION_PATH, LOTTERY_PATH } from "../../utils/consts";
 import ProfileMenu from "../ProfileMenu/ProfileMenu";
 
 const Header: React.FC = observer(() => {
@@ -31,7 +31,7 @@ const Header: React.FC = observer(() => {
             Lottery
           </Link>
 
-          <Link to="/about" className="text-white hover:text-gray-300">
+          <Link to={ABOUT_PATH} className="text-white hover:text-gray-300">
             About
           </Link>
         </nav>
