@@ -16,7 +16,7 @@ const ProductPage = observer(() => {
   }
 
   return (
-    <div className="flex flex-col space-y-5">
+    <div className="flex flex-col space-y-5 mt-10">
       <div className="flex flex-wrap p-4">
         <ProductImages imageUrls={product.imageUrls} />
         <ProductDetails product={product} />
