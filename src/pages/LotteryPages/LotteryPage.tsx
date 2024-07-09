@@ -3,11 +3,14 @@ import ConditionsLottery from "../../components/Lottery/Conditions";
 import { Container, Box, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { CHECKOUT_PATH } from "../../utils/consts";
+import cartStore from "../../store/CartStore";
+import { iphoneProduct } from "../../utils/products";
 
 const LotteryPage = observer(() => {
   const navigate = useNavigate();
 
   const handleNavigate = () => {
+    cartStore.addToCart({ ...iphoneProduct });
     navigate(CHECKOUT_PATH);
   };
 

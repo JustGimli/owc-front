@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import "./CardItem.css";
 import { Product } from "../../../utils/interfaces";
+import { LOTTERY_PATH } from "../../../utils/consts";
 
 const CardItem: React.FC<Product> = ({
   id,
@@ -14,7 +15,7 @@ const CardItem: React.FC<Product> = ({
 }) => {
   return (
     <div className="card">
-      <Link to={`/product/${id}`}>
+      <Link to={id != 0 ? `/product/${id}` : LOTTERY_PATH}>
         <img
           src={process.env.PUBLIC_URL + imageUrls[0]}
           alt={title}

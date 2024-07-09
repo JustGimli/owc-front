@@ -37,6 +37,14 @@ class User {
       }
     })();
   }
+
+  async save_email(data: any) {
+    try {
+      const response = await $api.post("save_user_credentials/", data);
+    } catch (error: any) {
+      console.log(error);
+    }
+  }
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export
