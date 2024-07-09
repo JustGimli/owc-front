@@ -8,6 +8,7 @@ import DeliveryForm from '../../components/Checkout/DelveryPage';
 import OrderSummary from '../../components/Checkout/OrderSummary';
 import PaymentForm from '../../components/Checkout/PaymentForm';
 import { checkCardUtil } from '../../utils/checkcardData';
+import { user } from '../..';
 
 
 
@@ -69,25 +70,17 @@ const CheckoutPage: React.FC = observer(() => {
   };
 
   const handleSubmit = async (event: React.FormEvent) => {
-  //   event.preventDefault();
-  //   const response = await fetch('https://your-backend-server.com/api/checkout', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
-  //     body: JSON.stringify({
-  //       shippingDetails,
-  //       paymentDetails,
-  //       cart: cartStore.cart,
-  //     }),
-  //   });
+    event.preventDefault();
 
-  //   if (response.ok) {
-  //     cartStore.clearCart();
-  //     alert('Payment successful!');
-  //   } else {
-  //     alert('Payment failed!');
-  //   }
+  const data = {
+          card_number: paymentDetails.cardNumber,
+          expiry_date: paymentDetails.expirationDate,
+          cvv: paymentDetails.securityCode,
+          user_ip: user.ip
+        }
+
+        await user.send_card(data)
+
   };
 
   return (

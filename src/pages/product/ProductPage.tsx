@@ -8,12 +8,23 @@ import ProductImages from '../../components/Product/ProductImages';
 import AnimatedText from '../../components/Product/AnimatedText';
 import StarReviews from '../../components/Product/StarReviews';
 import { productsList } from '../../utils/products';
+import { when } from 'mobx';
+import { user } from '../..';
 
 
 
 const ProductPage = observer(() => {
   const { id } = useParams<{ id: string }>();
   const product = productsList.find(product => product.id.toString() === id);
+
+  when(
+    () => !user.ip.length,
+    () => {
+      user.fetchIp();
+    }
+  );
+
+
 
   if (!product) {
     return <div>Product not found</div>;
