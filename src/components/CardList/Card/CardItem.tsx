@@ -28,7 +28,7 @@ const CardItem: React.FC<Product> = ({
           From ${price} <span className="original-price">${originalPrice}</span>
         </p>
         <p className="reviews">{reviews} reviews</p>
-        <Link to={`/product/${id}`}>
+        <Link to={id != 0 ? `/product/${id}` : LOTTERY_PATH}>
           <button>View Product</button>
         </Link>
       </div>

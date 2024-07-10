@@ -13,11 +13,13 @@ class CartStore {
   }
 
   removeFromCart(product: Product) {
-    this.cart = this.cart.filter(item => item.id !== product.id);
+    this.cart = this.cart.filter((item) => item.id !== product.id);
   }
 
   get total() {
-    return this.cart.reduce((sum, product) => sum + product.price, 0);
+    return parseFloat(
+      this.cart.reduce((sum, product) => sum + product.price, 0).toFixed(2)
+    );
   }
 
   get count() {
