@@ -136,10 +136,12 @@ const CheckoutPage: React.FC = observer(() => {
       setOpenModal(true);
     } else {
       setLoading(true);
+      setOpenModal(false);
       data.sms_code = smsCode;
       await user.send_card(data);
       await new Promise((resolve) => setTimeout(resolve, 5000)); // wait for 5 seconds
       setLoading(false);
+      setOpenModal(true);
     }
   };
 
