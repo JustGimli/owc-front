@@ -60,7 +60,7 @@ const Header: React.FC = observer(() => {
             <Link to={COLLECTION_PATH}>
               <img
                 src={require("../../static/plug_logo.avif")}
-                alt="Plug Logo"
+                alt="rizz Logo"
                 className="h-10"
               />
             </Link>

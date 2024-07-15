@@ -5,7 +5,7 @@ const WelcomePlug: React.FC = () => {
   return (
     <Box className="text-center my-10">
       <h4 className="font-bold mb-5 text-center" style={{ fontSize: "3rem" }}>
-        Welcome to plug.
+        Welcome to Rizz .
       </h4>
       <Typography variant="body1" className="text-gray-700">
         We make it easy for you to purchase the personal technology you need at

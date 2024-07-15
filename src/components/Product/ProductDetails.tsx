@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Product } from '../../utils/interfaces';
-import { Button, Chip, Collapse, Typography, Box } from '@mui/material';
+import { Button, Chip, Collapse, Typography, Box, useMediaQuery, useTheme } from '@mui/material';
 import { format, addDays } from 'date-fns';
 import cartStore from '../../store/CartStore';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
@@ -20,6 +20,9 @@ const qualities = [
 const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
   const [selectedQuality, setSelectedQuality] = useState(qualities[1]);
   const [descriptionOpen, setDescriptionOpen] = useState(false);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
 
   const calculatePrice = (basePrice: number, adjustment: number) => {
     return (basePrice * (1 + adjustment)).toFixed(2);
@@ -34,7 +37,12 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
 
   return (
     <Box flex={1} >
-      <Typography variant="h3" component="h1" gutterBottom>
+      <Typography
+          variant={isMobile ? 'h5' : 'h3'}
+          component="h1"
+          gutterBottom
+          sx={{ textAlign: isMobile ? 'center' : 'left' }}
+        >
         {product.title} - {selectedQuality.label}
       </Typography>
       <Typography variant="subtitle1" color="textSecondary" gutterBottom>

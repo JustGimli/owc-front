@@ -82,9 +82,9 @@ export const productsList: Product[] = [
       "/images/apple_watch_3_42mm_1.avif",
       "/images/apple_watch_3_42mm_2.avif",
     ],
-    description: `The only difference between our plug refurbished Apple Watch Series 3 and a brand new one is the price.
+    description: `The only difference between our rizz refurbished Apple Watch Series 3 and a brand new one is the price.
 
-      Our Apple Watch Series 3 is up to 40% more affordable and is backed by our plug 1-year warranty.
+      Our Apple Watch Series 3 is up to 40% more affordable and is backed by our rizz 1-year warranty.
       
       To ensure our products meet our incredibly high-performance standards, we’ve developed a proprietary 90+ point functionality evaluation, deep cleaning, and sanitization process. Specialized technicians at our company’s headquarters hand test each device, and only products that pass our rigorous testing receive plug’s Certified Pre-Owned status and are sold.`,
     condition: "good",
@@ -148,9 +148,9 @@ export const productsList: Product[] = [
       "/images/apple_watch_3_38mm_2.avif",
       "/images/apple_watch_3_38mm_3.avif",
     ],
-    description: `The only difference between our plug refurbished Apple Watch Series 3 and a brand new one is the price.
+    description: `The only difference between our rizz refurbished Apple Watch Series 3 and a brand new one is the price.
 
-      Our Apple Watch Series 3 is up to 40% more affordable and is backed by our plug 1-year warranty.
+      Our Apple Watch Series 3 is up to 40% more affordable and is backed by our rizz 1-year warranty.
       
       To ensure our products meet our incredibly high-performance standards, we’ve developed a proprietary 90+ point functionality evaluation, deep cleaning, and sanitization process. Specialized technicians at our company’s headquarters hand test each device, and only products that pass our rigorous testing receive plug’s Certified Pre-Owned status and are sold.`,
     condition: "good",

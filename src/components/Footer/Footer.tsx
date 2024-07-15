@@ -5,7 +5,7 @@ const Footer: React.FC = () => {
     <footer className="bg-gray-100 py-10" style={{marginTop: "20%"}}>
       <div className="container mx-auto px-4 flex flex-wrap justify-between">
         <div className="w-full lg:w-1/3 mb-10 lg:mb-0">
-          <h3 className="text-xl font-bold mb-4">About Plug®</h3>
+          <h3 className="text-xl font-bold mb-4">About Rizz®</h3>
           <p>We are a consumer electronics provider that connects people to reliable, Certified Pre-Owned Devices. We make it affordable and easy for you to get the most out of your personal technology purchases.</p>
           <p className="mt-4">Plug® is certified to R2v3, the most widely adopted global standard and certification program in the industry for the Responsible Recycling of electronics.</p>
         </div>
